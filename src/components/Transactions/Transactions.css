@@ -77,3 +77,7 @@
   top: 1rem;
   right: 1rem;
 }
+
+.transactions-icon.dark {
+  fill: var(--color-white);
+}
