@@ -6,6 +6,10 @@
   color: var(--color-black);
 }
 
+.transactions.dark {
+  color: var(--color-white);
+}
+
 .transactions__form {
   display: flex;
   flex-direction: column;
@@ -60,4 +64,16 @@
   color: var(--color-white);
   padding: 0.3rem;
   text-align: center;
+}
+
+.transactions__buttons.dark {
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+.transactions-icon {
+  width: 25px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
