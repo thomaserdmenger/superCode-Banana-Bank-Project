@@ -5,10 +5,13 @@ export default function Transactions() {
   const [cash, setCash] = useState(0)
   const [input, setInput] = useState('')
 
-  const einzahlen = (e) => {
-    e.preventDefault()
-
+  const handleError = () => {
     if (input === 0 || input.length === 0) return
+  }
+
+  const handleDeposit = (e) => {
+    e.preventDefault()
+    handleError()
 
     if (input < 0) {
       setCash((prevCash) => prevCash + input * -1)
@@ -19,10 +22,9 @@ export default function Transactions() {
     setInput('')
   }
 
-  const auszahlen = (e) => {
+  const handleWithdraw = (e) => {
     e.preventDefault()
-
-    if (input === 0 || input.length === 0) return
+    handleError()
 
     if (input > cash) {
       window.alert('Unzureichenden Guthaben')
@@ -52,8 +54,8 @@ export default function Transactions() {
           onChange={(event) => setInput(Number(event.target.value))}
         />
         <div>
-          <button onClick={einzahlen}>Einzahlen</button>
-          <button onClick={auszahlen}>Auszahlen</button>
+          <button onClick={handleDeposit}>Einzahlen</button>
+          <button onClick={handleWithdraw}>Auszahlen</button>
         </div>
       </form>
     </section>
