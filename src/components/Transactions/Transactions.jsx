@@ -1,9 +1,14 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './Transactions.css'
 
 export default function Transactions() {
   const [cash, setCash] = useState(0)
   const [input, setInput] = useState('')
+  const inputRef = useRef(null)
+
+  useEffect(() => {
+    inputRef.current.focus()
+  })
 
   const handleError = () => {
     if (input === 0 || input.length === 0) return
@@ -55,6 +60,7 @@ export default function Transactions() {
           placeholder='Betrag in €'
           value={input}
           onChange={(event) => setInput(Number(event.target.value))}
+          ref={inputRef}
         />
         <div className='transactions__buttons-container'>
           <button
