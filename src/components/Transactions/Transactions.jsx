@@ -41,10 +41,13 @@ export default function Transactions() {
 
   return (
     <section className='transactions'>
-      <h2>Cash</h2>
-      <p>{cash}</p>
-      <form>
+      <div className='transactions__amount-container'>
+        <h2>Cash</h2>
+        <p className='transactions__amount'>{`${cash.toFixed(2)} €`}</p>
+      </div>
+      <form className='transactions__form'>
         <input
+          className='transaction__input'
           type='number'
           min={0}
           name='user-input'
@@ -53,9 +56,17 @@ export default function Transactions() {
           value={input}
           onChange={(event) => setInput(Number(event.target.value))}
         />
-        <div>
-          <button onClick={handleDeposit}>Einzahlen</button>
-          <button onClick={handleWithdraw}>Auszahlen</button>
+        <div className='transactions__buttons-container'>
+          <button
+            className='transactions__buttons'
+            onClick={handleDeposit}>
+            Einzahlen
+          </button>
+          <button
+            className='transactions__buttons'
+            onClick={handleWithdraw}>
+            Auszahlen
+          </button>
         </div>
       </form>
     </section>

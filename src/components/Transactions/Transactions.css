@@ -1,0 +1,62 @@
+@import url(../../../public/css/colors.css);
+
+.transactions {
+  text-align: center;
+  width: 100%;
+  color: var(--color-black);
+}
+
+.transactions__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.transactions__amount-container {
+  margin-block-end: 2rem;
+  overflow-x: scroll;
+  padding-inline: 0.5rem;
+  word-wrap: break-word;
+}
+
+.transactions__amount {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.transaction__input {
+  border-radius: 15px;
+  border: 1px solid black;
+  font-size: 1.2rem;
+  margin-block-end: 1.5rem;
+  margin-inline: auto;
+  outline: none;
+  padding: 0.5rem;
+  text-align: center;
+  transition: all 1s;
+  width: 70%;
+}
+
+.transaction__input:focus {
+  padding: 1rem;
+  margin-block-start: -0.25rem;
+  margin-block-end: 1em;
+}
+
+.transactions__buttons-container {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-inline: auto;
+  width: 70%;
+}
+.transactions__buttons {
+  all: unset;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid var(--color-black);
+  background-color: var(--color-black);
+  border-radius: 15px;
+  color: var(--color-white);
+  padding: 0.3rem;
+  text-align: center;
+}
